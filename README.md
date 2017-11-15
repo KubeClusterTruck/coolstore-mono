@@ -33,7 +33,7 @@ The following steps can be used to configure and run the demo in a container
 
 4. Start the container: `docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/brms-coolstore-demo`
 
-5. Open shopping cart and demo away (http://&lt;DOCKER_HOST&gt;:8080/brms-coolstore-demo)
+5. Open shopping cart and smoke test container locally  (http://&lt;DOCKER_HOST&gt;:8080/brms-coolstore-demo)
 
 Additional information can be found in the jbossdemocentral container [developer repository](https://github.com/jbossdemocentral/docker-developer)
 
@@ -43,15 +43,15 @@ The following steps can be used to push the local image to OpenShift and Build/R
 
 1. Create an OpenShift project to Build/Deploy Application
 
-2. Tag/Push local Docker Image to your OpenShift Project, follow instructions [here](some link)
+2. Tag/Push local Docker Image to your OpenShift Project, follow instructions [here](https://github.com/mono2micro/coolstore-mono/blob/master/support/docker-OCP/README.md)
 
 3. Create Application in OpenShift using the Docker File Build Strategy, execute the following **oc command**
 ```
-oc new-app https://github.com/mono2micro/coolstore-mono.git --name=mono-coolstore-demo --context-dir=/support/mono-coolstore-demo --docker-image=[internal repo url to image pushed in step2]
+oc new-app [OpenShift Project]/brms-coolstore-demo
 ```
 4. Expose the created service as a Route, execute the following **oc command**
 ```
-oc expose service mono-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
+oc expose service brms-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
 ```
 5. Open a Browser using the newly created Route in OpenShift to validate the deployed Application
 
