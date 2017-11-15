@@ -9,7 +9,7 @@ JBoss BRMS product web based dashboard.
 This demo is self contained, it uses a custom maven settings to deploy all built JBoss BRMS knowledge artifacts
 into an external maven repository (not your local repository), in /tmp/maven-repo.
 
-Tor using this demo a local Docker build, push to an OpenShift Enterprise Repo, then S2I/Docker File Build will be executed to describe the steps of Containerizing a Legacy J2EE App, and then typical changes needed for a Developer created Container to deploy/run on OpenShift Enterprise.
+For this demo a local Docker build, push to an OpenShift Enterprise Repo, then Docker Image Deployment will be executed to describe the steps of Containerizing a Legacy J2EE App, and then typical steps needed for a Developer created Container to deploy/run on OpenShift Enterprise.
 
 Software
 --------
@@ -31,7 +31,7 @@ The following steps can be used to configure and run the demo in a container
 
 3. Run the 'init-docker.sh' or 'init-docker.ps1' file.
 
-4. Start the container: `docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/brms-coolstore-demo`
+4. Start the container to verify the applications runs: `docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/brms-coolstore-demo`
 
 5. Open shopping cart and smoke test container locally  (http://&lt;DOCKER_HOST&gt;:8080/brms-coolstore-demo)
 
@@ -45,7 +45,7 @@ The following steps can be used to push the local image to OpenShift and Build/R
 
 2. Tag/Push local Docker Image to your OpenShift Project, follow instructions [here](https://github.com/mono2micro/coolstore-mono/blob/master/support/docker-OCP/README.md)
 
-3. Create Application in OpenShift using the Docker File Build Strategy, execute the following **oc command**
+3. Create Application in OpenShift using the image we just pushed to our OpenShift Project, execute the following **oc command**
 ```
 oc new-app [OpenShift Project]/brms-coolstore-demo
 ```
