@@ -1,5 +1,5 @@
 # Update image to allow to run as Non-Root User on OpenShift from original Docker Image
-FROM soa-monolith-dev/brms-coolstore-demo:latest
+FROM brms-coolstore-demo:latest
 USER root
 # RUN chgrp -R 0 /opt/jboss/brms/jboss-eap-7.0/standalone && chgrp -R 0 /opt/jboss/brms/jboss-eap-7.0/bin/.niogit && chgrp -R 0 /opt/jboss/.m2/repository && chgrp -R 0 /opt/jboss/brms/jboss-eap-7.0/bin/.index
 RUN chgrp -R 0 /opt/jboss 
