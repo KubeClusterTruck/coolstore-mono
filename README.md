@@ -47,7 +47,7 @@ The following steps can be used to push the local image to OpenShift and Build/R
 
 3. Create Application in OpenShift using the Docker File Build Strategy, execute the following **oc command**
 ```
-oc new-app https://github.com/mono2micro/coolstore-mono.git --name=mono-coolstore-demo --context-dir=/support/mono-coolstore-demo
+oc new-app https://github.com/mono2micro/coolstore-mono.git --name=mono-coolstore-demo --context-dir=/support/mono-coolstore-demo --docker-image=[internal repo url to image pushed in step2]
 ```
 4. Expose the created service as a Route, execute the following **oc command**
 ```
