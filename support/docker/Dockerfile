@@ -45,6 +45,8 @@ COPY projects /opt/jboss/brms-projects
 COPY support/libs /opt/jboss/brms-projects/libs
 COPY support/userinfo.properties $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
 COPY support/standalone.xml $BRMS_HOME/standalone/configuration/
+# FOR OCP DEPLOYMENT
+COPY support/settings.xml $BRMS_HOME/bin/.settings.xml
 
 # Create users.
 RUN $BRMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u brmsAdmin -p jbossbrms1! -ro analyst,admin,manager,user,kie-server,kiemgmt,rest-all --silent \
