@@ -1,4 +1,4 @@
-JBoss BRMS Suite Cool Store Demo
+JBoss BRMS Suite Cool Store Monolith Demo
 ================================
 This is a retail web store demo where you will find rules, decision tables, events, and a ruleflow
 that is leveraged by a web application. The web application is a WAR built using the JBoss BRMS
@@ -9,7 +9,7 @@ JBoss BRMS product web based dashboard.
 This demo is self contained, it uses a custom maven settings to deploy all built JBoss BRMS knowledge artifacts
 into an external maven repository (not your local repository), in /tmp/maven-repo.
 
-There are four options available to you for using this demo; local, Docker, Openshift Online and Red Hat CDK OpenShift Enterprise.
+Tor using this demo a local Docker build, push to an OpenShift Enterprise Repo, then S2I/Docker File Build will be executed to describe the steps of Containerizing a Legacy J2EE App, and then typical changes needed for a Developer created Container to deploy/run on OpenShift Enterprise.
 
 Software
 --------
@@ -21,37 +21,11 @@ The following software is required to run this demo:
 - [7-Zip](http://www.7-zip.org/download.html) (Windows only): to overcome the Windows 260 character path length limit, we need 7-Zip to unzip the BRMS deployable.
 
 
-Option 1 - Install on your machine
-----------------------------------
-1. [Download and unzip.](https://github.com/jbossdemocentral/brms-coolstore-demo/archive/master.zip)
-
-2. Add products to installs directory.
-
-3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges.
-
-4. Start JBoss BRMS Server by running ./target/jboss-eap-7.0/bin/standalone.sh
-
-5. Login to http://localhost:8080/business-central
-
-    ```
-    - login for admin and analyst roles (u:brmsAdmin / p:jbossbrms1!)
-    ```
-
-6. Build and deploy project. To do this, click on 'Authoring -> Project Authoring', this will open the 'Project Authoring' view. Click on the 'Open Project Editor' button, which opens the project editor. Now, click on the 'Build -> Build & Deploy' button, which can be found on the right-hand side of the project editor window.
-
-7. Open shopping cart and demo away (http://localhost:8080/brms-coolstore-demo)
-
-
-Option 2 - Install on OpenShift
--------------------------------
-Running this demo in a container on any OpenShift Container Platform is [available at Red Hat Demo Central](https://github.com/redhatdemocentral/rhcs-coolstore-demo).
-
-
-Option 3 - Run in Docker
+Build/Run Developement Docker Container on Local Machine
 -----------------------------------------
 The following steps can be used to configure and run the demo in a container
 
-1. [Download and unzip.](https://github.com/jbossdemocentral/brms-coolstore-demo/archive/master.zip)
+1. Clone this Repo to a local working directory
 
 2. Add the EAP installer and BPM Suite deployable to installs directory.
 
@@ -59,13 +33,7 @@ The following steps can be used to configure and run the demo in a container
 
 4. Start the container: `docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/brms-coolstore-demo`
 
-5. Login to http://&lt;DOCKER_HOST&gt;:8080/business-central
-
-    ```
-    - login for admin and analyst roles (u:brmsAdmin / p:jbossbrms1!)
-    ```
-
-6. Open shopping cart and demo away (http://&lt;DOCKER_HOST&gt;:8080/brms-coolstore-demo)
+5. Open shopping cart and demo away (http://&lt;DOCKER_HOST&gt;:8080/brms-coolstore-demo)
 
 Additional information can be found in the jbossdemocentral container [developer repository](https://github.com/jbossdemocentral/docker-developer)
 
