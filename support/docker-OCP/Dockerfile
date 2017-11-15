@@ -2,7 +2,7 @@
 FROM jbossdemocentral/developer:jdk8-uid
 
 # Maintainer details
-MAINTAINER Andrew Block, Eric D. Schabell, Duncan Doylle, Jaen Swart
+MAINTAINER Greg Hoelzer with Original Contributors Andrew Block, Eric D. Schabell, Duncan Doylle, Jaen Swart
 
 # Environment Variables
 ENV BRMS_HOME /opt/jboss/brms/jboss-eap-7.0

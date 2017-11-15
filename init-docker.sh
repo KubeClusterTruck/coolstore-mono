@@ -5,7 +5,7 @@ AUTHORS2="AMahdy AbdElAziz, Eric D. Schabell"
 AUTHORS3="Duncan Doyle, Jaen Swart"
 PROJECT="git@github.com:jbossdemocentral/brms-coolstore-demo.git"
 PRODUCT="JBoss BRMS"
-DOCKERFILE="support/docker/Dockerfile"
+DOCKERFILE="support/docker-OCP/Dockerfile"
 SRC_DIR=./installs
 BRMS=jboss-brms-6.4.0.GA-deployable-eap7.x.zip
 EAP=jboss-eap-7.0.0-installer.jar
@@ -68,7 +68,7 @@ else
 		exit
 fi
 
-cp support/docker/Dockerfile .
+cp $DOCKERFILE .
 
 echo Starting Docker build.
 echo
