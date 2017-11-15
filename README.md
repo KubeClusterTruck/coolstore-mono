@@ -51,7 +51,7 @@ oc new-app https://github.com/mono2micro/coolstore-mono.git --name=mono-coolstor
 ```
 4. Expose the created service as a Route, execute the following **oc command**
 ```
-oc expose mono-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
+oc expose service mono-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
 ```
 5. Open a Browser using the newly created Route in OpenShift to validate the deployed Application
 
