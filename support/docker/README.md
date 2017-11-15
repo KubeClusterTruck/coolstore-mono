@@ -1,6 +1,6 @@
 **Add your OCP Repo to Insecure Registries**
 
-Add the following lines to:  **/etc/containers/registries.conf with YOUR repo
+Add the following lines to:  **/etc/containers/registries.conf** with YOUR repo
 ```
 insecure_registries:
   - docker-registry-default.apps.c7.core.rht-labs.com
