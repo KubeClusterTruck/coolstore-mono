@@ -55,49 +55,6 @@ oc expose service brms-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
 ```
 5. Open a Browser using the newly created Route in OpenShift to validate the deployed Application
 
-Notes
------
-The web application (shopping cart) is built during demo installation with a provided coolstore project jar version 2.0.0. When you
-open the project you will find the version is also set to 2.0.0. You can run the web application as is, but if you build and deploy
-a new version of 2.0.0 to your maven repository it will find duplicate rules. To demo you deploy a new version of the coolstore
-project by bumping the version number on each build and deploy, noting the KieScanner picking up the new version within 10 seconds
-of a new deployment. For example, initially start project, bump the version to 3.0.0, build and deploy, open web application and
-watch KieScanner in server logs pick up the 3.0.0 version. Now change a shipping rule value in decision table, save, bump project
-version to 4.0.0, build and deploy, watch for KieScanner picking up new 4.0.0 version, now web application on next run will use new
-shipping values.
-
-
-Supporting Articles
--------------------
-- [JBoss BRMS Cool Store UI gets Vaadin facelift](http://www.schabell.org/2016/01/jboss-brms-coolstore-ui-vaadin-facelift.html)
-
-- [7 Steps to Your First Rules with JBoss BRMS Starter Kit](http://www.schabell.org/2015/08/7-steps-first-rules-jboss-brms-starter-kit.html)
-
-- [3 shockingly easy ways into JBoss rules, events, planning & BPM](http://www.schabell.org/2015/01/3-shockingly-easy-ways-into-jboss-brms-bpmsuite.html)
-
-- [Jump Start Your Rules, Events, Planning and BPM Today](http://www.schabell.org/2014/12/jump-start-rules-events-planning-bpm-today.html)
-
-- [4 Foolproof Tips Get You Started With JBoss BRMS 6.0.3](http://www.schabell.org/2014/10/4-foolproof-tips-get-started-jboss-brms-603.html)
-
-- [How to Use Rules and Events to Drive JBoss BRMS Cool Store for xPaaS](http://www.schabell.org/2014/08/how-to-use-rules-events-drive-jboss-brms-coolstore-xpaas.html)
-
-- [Red Hat JBoss BRMS - all product demos updated for version 6.0.2.GA release](http://www.schabell.org/2014/07/redhat-jboss-brms-product-demos-6.0.2-updated.html)
-
-- [Red Hat JBoss BRMS 6 - Demo Cool Store Dynamic Rule Updates (video)] (http://www.schabell.org/2014/05/redhat-jboss-brms6-demo-coolstore-dynamic-rule-updates.html)
-
-- [Red Hat JBoss BRMS 6 - The New Cool Store Demo] (http://www.schabell.org/2014/03/redhat-jboss-brms-v6-coolstore-demo.html)
-
-- [JBoss BRMS Cool Store Demo updated with EAP 6.1.1] (http://www.schabell.org/2013/09/jboss-brms-coolstore-demo-updated-eap-611.html)
-
-- [A shopping cart example in the Cool Store Demo] (http://www.schabell.org/2013/04/jboss-brms-coolstore-demo.html)
-
-- [Cool Store installation video part I] (http://www.schabell.org/2013/05/jboss-brms-coolstore-demo-video-partI.html)
-
-- [Cool Store CEP and Rules video part II] (http://www.schabell.org/2013/05/jboss-brms-coolstore-demo-video-partII.html)
-
-- [Cool Store BPM and Decision Tables video part III] (http://www.schabell.org/2013/05/jboss-brms-coolstore-demo-video-partIII.html)
-
-
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
@@ -105,51 +62,6 @@ See the tagged releases for the following versions of the product:
 - v3.8 JBoss BRMS 6.4.0.GA on JBoss EAP 7.0.0.GA with cool store installed and RH CDK on OSE Cloud install option.
 
 - v3.7 JBoss BRMS 6.3.0 on JBoss EAP 6.4.7 with cool store installed and RH CDK on OSE Cloud install option.
-
-- v3.6 JBoss BRMS 6.2.0-BZ-1299002 on JBoss EAP 6.4.4 with cool store installed and RH CDK on OSE Cloud install option.
-
-- v3.5 JBoss BRMS 6.2.0-BZ-1299002 on JBoss EAP 6.4.4 with cool store installed.
-
-- v3.4 JBoss BRMS 6.2.0, JBoss EAP 6.4.4 and OSE aligned containerization.
-
-- v3.3 JBoss BRMS 6.2.0, JBoss EAP 6.4.4 and cool store installed, UI updated to Vaadin 7.6.0.
-
-- v3.2 JBoss BRMS 6.2.0, JBoss EAP 6.4.4 and cool store installed, UI updated to Vaadin 7.
-
-- v3.1 JBoss BRMS 6.2.0, JBoss EAP 6.4.4 and cool store installed.
-
-- v3.0 JBoss BRMS 6.1.1 (patch update applied) with cool store installed and Albert Wong updates for JBDS project importing.
-
-- v2.9 JBoss BRMS 6.1.1 (patch update applied) with cool store installed.
-
-- v2.8 JBoss BRMS 6.1 with cool store installed.
-
-- v2.7 JBoss BRMS 6.0.3 installer with cool store configured to scan external maven repository.
-
-- v2.6 JBoss BRMS 6.0.3 installer with cool store updated so that project unit tests running again.
-
-- v2.5 JBoss BRMS 6.0.3 with optional containerized installation.
-
-- v2.4 moved to JBoss Demo Central, with updated windows init.bat support and one click install button.
-
-- v2.3 JBoss BRMS 6.0.3 installer with cool store demo installed.
-
-- v2.2 JBoss BPM Suite 6.0.2, JBoss EAP 6.1.1, cool store demo installed.
-
-- v2.1 JBoss BPM Suite 6.0.1, JBoss EAP 6.1.1, cool store demo installed.
-
-- v2.0 JBoss BPM Suite 6.0.0, JBoss EAP 6.1.1, cool store demo installed.
-
-- v1.4 is BRMS 5.3.1 deployable, running on JBoss EAP 6.1.1, integrated BRMS maven repo into project so no longer need to add to
-	personal settings configuration which fully automates project build.
-
-- v1.3 is BRMS 5.3.1 deployable, running on JBoss EAP 6.1.1, and added Forge Laptop Sticker to store.
-
-- v1.2 is BRMS 5.3.1 deployable, running on JBoss EAP 6.1, mavenized using JBoss repo.
-
-- v1.1 new welcome screen and doc fixes.
-
-- v1.0 is BRMS 5.3.1 deployable, running on JBoss EAP 6.
 
 ![Announcement Sign](https://github.com/jbossdemocentral/brms-coolstore-demo/blob/master/docs/demo-images/announce-sign.jpg?raw=true)
 
