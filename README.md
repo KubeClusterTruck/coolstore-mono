@@ -37,7 +37,18 @@ The following steps can be used to configure and run the demo in a container
 
 Additional information can be found in the jbossdemocentral container [developer repository](https://github.com/jbossdemocentral/docker-developer)
 
+Build/Deploy Container Application to OpenShift Enterprise
+-----------------------------------------
+The following steps can be used to push the local image to OpenShift and Build/Run non-privileged container on OpenShift
 
+1. Create an OpenShift project to Build/Deploy Application
+
+2. Tag/Push local Docker Image to your OpenShift Project, follow instructions [here](some link)
+
+3. Create Application in OpenShift using the Docker File Build Strategy, execute the following **oc command**
+```
+oc new-app [add command here]
+```
 
 Notes
 -----
