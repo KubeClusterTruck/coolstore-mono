@@ -62,8 +62,9 @@ objects:
     nodeSelector: null
     output:
       to:
-        kind: ImageStreamTag
-        name: brms-coolstore-demo:latest
+        kind: DockerImage
+        name: >-
+          docker-registry.default.svc:5000/coolstore-mono/brms-coolstore-demo:latest
     postCommit: {}
     resources: {}
     runPolicy: Serial
