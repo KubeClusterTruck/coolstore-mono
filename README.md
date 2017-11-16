@@ -66,7 +66,9 @@ The following steps can be used to deploy the application and a basic Build Pipl
 ```
 oc process -f support/openshift/brms-coolstore-demo.yaml | oc create -f -
 ```
-3. From the Web Console, start the **coolstore-mon-mvn-pipeline** Build Pipeline
+3. From the Web Console, monitor/wait for the initial Docker File Build to complete
+
+4. From the Web Console, start the **coolstore-mon-mvn-pipeline** Build Pipeline
 
 Released versions
 -----------------
