@@ -7,6 +7,8 @@ MAINTAINER Greg Hoelzer with Original Contributors Andrew Block, Eric D. Schabel
 #
 #####################################################################
 # Copy demo and support files
+RUN ls -l
+
 COPY support/brms-demo-niogit $BRMS_HOME/bin/.niogit
 # Clone the brms-coolstore-repo repository
 USER root
