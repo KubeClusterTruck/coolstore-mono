@@ -7,18 +7,22 @@ MAINTAINER Greg Hoelzer with Original Contributors Andrew Block, Eric D. Schabel
 #
 #####################################################################
 # Copy demo and support files
-COPY support/brms-demo-niogit $BRMS_HOME/bin/.niogit
+RUN git clone https://github.com/mono2micro/coolstore-mono.git && ls -l
+
+#COPY coolstore-mono/support/brms-demo-niogit $BRMS_HOME/bin/.niogit
+RUN cp -rf coolstore-mono/support/brms-demo-niogit $BRMS_HOME/bin/.niogit
 # Clone the brms-coolstore-repo repository
 USER root
 RUN rm -rf $BRMS_HOME/bin/.niogit/coolstore-demo.git && git clone --bare https://github.com/jbossdemocentral/brms-coolstore-repo.git $BRMS_HOME/bin/.niogit/coolstore-demo.git
 USER 1000
 
-COPY projects /opt/jboss/brms-projects
-COPY support/libs /opt/jboss/brms-projects/libs
-COPY support/userinfo.properties $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
-COPY support/standalone.xml $BRMS_HOME/standalone/configuration/
+#COPY coolstore-mono/projects /opt/jboss/brms-projects
+RUN cp -rf coolstore-mono/projects /opt/jboss/brms-projects
+RUN cp -rf coolstore-mono/support/libs /opt/jboss/brms-projects/libs
+RUN cp -rf coolstore-mono/support/userinfo.properties $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
+RUN cp -rf coolstore-mono/support/standalone.xml $BRMS_HOME/standalone/configuration/
 # FOR OCP DEPLOYMENT
-COPY support/settings.xml $BRMS_HOME/bin/.settings.xml
+RUN cp -rf coolstore-mono/support/settings.xml $BRMS_HOME/bin/.settings.xml
 
 # Create users.
 RUN $BRMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u brmsAdmin -p jbossbrms1! -ro analyst,admin,manager,user,kie-server,kiemgmt,rest-all --silent \

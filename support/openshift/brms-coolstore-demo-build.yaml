@@ -29,25 +29,19 @@ spec:
                 }
               }
 
-              node("maven") {
+              node {
                 stage("Checkout") {
-                  git url: "https://github.com/ghoelzer-rht/ocp-rhoar-spring.git", branch: "master"
+                  git url: "https://github.com/mono2micro/coolstore-mono.git", branch: "master"
                 }
 
-                stage("Build Base JBoss EAP/BRMS Image") {
-                  // *** Uncomment for 1st Run *** if Lab 1 was skipped
-                  // sh "mvn clean fabric8:deploy -Popenshift --file lab/pom.xml"
-                  //sh "mvn clean package -Popenshift --file lab/pom.xml"
-                  //stash name:"jar", includes:"lab/target/product-catalog.jar"
-                  sh "echo '***** Docker Build 1 Goes Here *****'"
- 
                 stage("Build Coolstore Monolith Application Image") {
                   // *** Uncomment for 1st Run *** if Lab 1 was skipped
                   // sh "mvn clean fabric8:deploy -Popenshift --file lab/pom.xml"
                   //sh "mvn clean package -Popenshift --file lab/pom.xml"
                   //stash name:"jar", includes:"lab/target/product-catalog.jar"
-                  sh "echo '***** Docker Build 2 Goes Here *****'"
- 
+                  sh "echo '***** Starting docker App Build Here *****'"
+                  sh "ls -l"
+                  sh "./init-docker-OCP-app.sh"
                 }
               }
 
