@@ -16,7 +16,7 @@ import com.vaadin.ui.VerticalLayout;
 import javax.inject.Inject;
 
 @Theme("coolstoretheme")
-@Title("Red Hat Cool Store")
+@Title("Red Hat Cool Store 2.0")
 @CDIUI("")
 public class CoolStoreApplication extends UI {
 
