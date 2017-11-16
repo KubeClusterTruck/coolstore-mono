@@ -1,4 +1,5 @@
 **Add your OCP Repo to Insecure Registries**
+TODO: Adding inseucre_registries are distro/version specific... need to revisit.
 
 Add the following lines to:  **/etc/containers/registries.conf** with YOUR repo
 ```
