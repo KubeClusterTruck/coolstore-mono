@@ -58,10 +58,16 @@ oc expose service brms-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
 Use Template to Deploy to OpenShift Enterprise
 -----------------------------------------
 The following steps can be used to deploy the application and a basic Build Pipleine to Openshift
-*** Dependent on brms-coolstore-base image being pushed to the "coolstore-mono" project ***
+**Dependent on brms-coolstore-base image being pushed to the "coolstore-mono" project **
+
+1. Create an OpenShift project **coolstore-mono** to Build/Deploy Application
+
+2. Execute the following command to create the required OpenShift Objects
 ```
 oc process -f support/openshift/brms-coolstore-demo.yaml | oc create -f -
 ```
+3. From the Web Console, start the **coolstore-mon-mvn-pipeline** Build Pipeline
+
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
