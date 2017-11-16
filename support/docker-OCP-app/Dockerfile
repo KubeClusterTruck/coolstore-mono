@@ -9,7 +9,8 @@ MAINTAINER Greg Hoelzer with Original Contributors Andrew Block, Eric D. Schabel
 # Copy demo and support files
 RUN git clone https://github.com/mono2micro/coolstore-mono.git && ls -l
 
-COPY coolstore-mono/support/brms-demo-niogit $BRMS_HOME/bin/.niogit
+#COPY coolstore-mono/support/brms-demo-niogit $BRMS_HOME/bin/.niogit
+RUN cp -rf coolstore-mono/support/brms-demo-niogit $BRMS_HOME/bin/.niogit
 # Clone the brms-coolstore-repo repository
 USER root
 RUN rm -rf $BRMS_HOME/bin/.niogit/coolstore-demo.git && git clone --bare https://github.com/jbossdemocentral/brms-coolstore-repo.git $BRMS_HOME/bin/.niogit/coolstore-demo.git
