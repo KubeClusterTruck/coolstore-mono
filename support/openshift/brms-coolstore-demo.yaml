@@ -12,7 +12,7 @@ objects:
     creationTimestamp: null
     name: brms-coolstore-demo
   spec:
-    host: brms-coolstore-demo-coolstore-mono.apps.c7.core.rht-labs.com
+    host: 
     path: /brms-coolstore-demo/
     port:
       targetPort: 8080-tcp
