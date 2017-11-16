@@ -55,6 +55,13 @@ oc expose service brms-coolstore-demo --port=8080 --path=/brms-coolstore-demo/
 ```
 5. Open a Browser using the newly created Route in OpenShift to validate the deployed Application
 
+Use Template to Deploy to OpenShift Enterprise
+-----------------------------------------
+The following steps can be used to deploy the application and a basic Build Pipleine to Openshift
+*** Dependent on brms-coolstore-base image being pushed to the "coolstore-mono" project ***
+```
+oc process -f support/openshift/brms-coolstore-demo.yaml | oc create -f -
+```
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
