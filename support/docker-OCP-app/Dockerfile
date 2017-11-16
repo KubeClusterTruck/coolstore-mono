@@ -22,7 +22,7 @@ RUN cp -rf coolstore-mono/support/libs /opt/jboss/brms-projects/libs
 RUN cp -rf COPY coolstore-mono/support/userinfo.properties $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
 RUN cp -rf COPY coolstore-mono/support/standalone.xml $BRMS_HOME/standalone/configuration/
 # FOR OCP DEPLOYMENT
-RUN cp -rf COPY coolstore-mono/support/settings.xml $BRMS_HOME/bin/.settings.xml
+RUN cp -rf coolstore-mono/support/settings.xml $BRMS_HOME/bin/.settings.xml
 
 # Create users.
 RUN $BRMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u brmsAdmin -p jbossbrms1! -ro analyst,admin,manager,user,kie-server,kiemgmt,rest-all --silent \
