@@ -16,12 +16,13 @@ USER root
 RUN rm -rf $BRMS_HOME/bin/.niogit/coolstore-demo.git && git clone --bare https://github.com/jbossdemocentral/brms-coolstore-repo.git $BRMS_HOME/bin/.niogit/coolstore-demo.git
 USER 1000
 
-COPY coolstore-mono/projects /opt/jboss/brms-projects
-COPY coolstore-mono/support/libs /opt/jboss/brms-projects/libs
-COPY coolstore-mono/support/userinfo.properties $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
-COPY coolstore-mono/support/standalone.xml $BRMS_HOME/standalone/configuration/
+#COPY coolstore-mono/projects /opt/jboss/brms-projects
+RUN cp -rf coolstore-mono/projects /opt/jboss/brms-projects
+RUN cp -rf coolstore-mono/support/libs /opt/jboss/brms-projects/libs
+RUN cp -rf COPY coolstore-mono/support/userinfo.properties $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
+RUN cp -rf COPY coolstore-mono/support/standalone.xml $BRMS_HOME/standalone/configuration/
 # FOR OCP DEPLOYMENT
-COPY coolstore-mono/support/settings.xml $BRMS_HOME/bin/.settings.xml
+RUN cp -rf COPY coolstore-mono/support/settings.xml $BRMS_HOME/bin/.settings.xml
 
 # Create users.
 RUN $BRMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u brmsAdmin -p jbossbrms1! -ro analyst,admin,manager,user,kie-server,kiemgmt,rest-all --silent \
