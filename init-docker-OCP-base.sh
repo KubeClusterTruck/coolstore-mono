@@ -73,7 +73,7 @@ cp $DOCKERFILE .
 echo Starting Docker build.
 echo
 
-docker build -t jbossdemocentral/brms-coolstore-base .
+docker build -t brms-coolstore-base .
 
 if [ $? -ne 0 ]; then
         echo

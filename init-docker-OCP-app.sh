@@ -40,7 +40,7 @@ cp $DOCKERFILE .
 echo Starting Docker build.
 echo
 
-docker build -t jbossdemocentral/brms-coolstore-app .
+docker build -t brms-coolstore-demo .
 
 if [ $? -ne 0 ]; then
         echo
@@ -57,9 +57,9 @@ rm Dockerfile
 echo
 echo "==================================================================================="
 echo "=                                                                                 ="
-echo "=  You can now start the $PRODUCT in a Docker container with:                   ="
+echo "=  You can now start the $PRODUCT in a Docker container with:                     ="
 echo "=                                                                                 ="
-echo "=  docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/brms-coolstore-demo  ="
+echo "=  docker run -it -p 8080:8080 -p 9990:9990 brms-coolstore-demo                   ="
 echo "=                                                                                 ="
 echo "=  Login into business central at:                                                ="
 echo "=                                                                                 ="
