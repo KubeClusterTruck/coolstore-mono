@@ -9,7 +9,7 @@ $AUTHORS2="AMahdy AbdElAziz, Eric D. Schabell"
 $AUTHORS3="Duncan Doyle, Jaen Swart"
 $PROJECT="git@github.com:jbossdemocentral/brms-coolstore-demo.git"
 $PRODUCT="JBoss BRMS"
-$DOCKERFILE="support\docker\Dockerfile"
+$DOCKERFILE="support\docker-OCP\Dockerfile"
 $SRC_DIR="$PROJECT_HOME\installs"
 $SUPPORT_DIR="$PROJECT_HOME\support"
 $BRMS="jboss-brms-6.4.0.GA-deployable-eap7.x.zip"
@@ -64,7 +64,7 @@ If (Test-Path "$SRC_DIR\$BRMS") {
 	exit
 }
 
-Copy-Item "$SUPPORT_DIR\docker\Dockerfile" "$PROJECT_HOME" -force
+Copy-Item "$SUPPORT_DIR\docker-OCP\Dockerfile" "$PROJECT_HOME" -force
 
 Write-Host "Starting Docker build.`n"
 
