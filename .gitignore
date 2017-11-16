@@ -1,4 +1,3 @@
-Dockerfile
 *.zip
 target/
 .DS_Store
