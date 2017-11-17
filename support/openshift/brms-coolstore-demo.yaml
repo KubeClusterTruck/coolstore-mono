@@ -139,6 +139,7 @@ objects:
                     openshiftDeploy deploymentConfig: "brms-coolstore-demo"
                   }
                   stage("Smoke Test Coolstore") {
+                    sh "sleep 30"
                     sh 'curl http://brms-coolstore-demo-coolstore-mono.apps.c7.core.rht-labs.com/brms-coolstore-demo/ | grep -i "<title>Red Hat Cool Store</title>"'
                   }
                 }
