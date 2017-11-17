@@ -144,10 +144,16 @@ objects:
                 }
              }
           } catch (err) {
-             echo "in catch block"
-             echo "Caught: ${err}"
-             currentBuild.result = 'FAILURE'
-             throw err
+              node {
+                stage("Fallback to Last Release") {
+                  openshiftTag alias: 'false', apiURL: '', authToken: '', destStream: 'brms-coolstore-demo', destTag: 'latest', destinationAuthToken: '', destinationNamespace: '', namespace: '', srcStream: 'brms-coolstore-demo', srcTag: 'last-release', verbose: 'false'
+                  openshiftDeploy deploymentConfig: "brms-coolstore-demo"
+              }
+              echo "in catch block"
+              echo "Caught: ${err}"
+              currentBuild.result = 'FAILURE'
+              throw err
+              }
           }
           node {
             stage("Tag and Release Image") {
